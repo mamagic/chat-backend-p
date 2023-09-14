@@ -1,0 +1,16 @@
+# The values given here are actually the default values. But they are explicitly
+# set here as an example of setting the Kafka properties.
+spring:
+  kafka:
+    bootstrap-servers: 15.165.203.208:9092
+#    bootstrap-servers: 15.165.75.166:9092
+    template:
+      default-topic: chat
+    producer:
+      keySerializer: org.apache.kafka.common.serialization.StringSerializer # 키를 문자열로 직렬화
+      valueSerializer: org.apache.kafka.common.serialization.StringSerializer # 값을 문자열로 직렬화
+    consumer:
+      bootstrap-servers: 15.165.203.208:9092
+      group-id: chat-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
